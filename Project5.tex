@@ -1,0 +1,103 @@
+% LaTeX Article Template - customizing page format
+%
+% LaTeX document uses 10-point fonts by default.  To use
+% 11-point or 12-point fonts, use \documentclass[11pt]{article}
+% or \documentclass[12pt]{article}.
+\documentclass{article}
+
+% Set left margin - The default is 1 inch, so the following 
+% command sets a 1.25-inch left margin.
+\setlength{\oddsidemargin}{0.25in}
+
+% Set width of the text - What is left will be the right margin.
+% In this case, right margin is 8.5in - 1.25in - 6in = 1.25in.
+\setlength{\textwidth}{6in}
+
+% Set top margin - The default is 1 inch, so the following 
+% command sets a 0.75-inch top margin.
+\setlength{\topmargin}{-0.25in}
+
+% Set height of the text - What is left will be the bottom margin.
+% In this case, bottom margin is 11in - 0.75in - 9.5in = 0.75in
+\setlength{\textheight}{8in}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\DeclarePairedDelimiter\Floor\lfloor\rfloor
+\DeclarePairedDelimiter\Ceil\lceil\rceil
+\graphicspath{ {./} }
+\setlength{\parskip}{5pt} 
+\pagestyle{fancyplain}
+% Set the beginning of a LaTeX document
+\begin{document}
+
+\lhead{Drew Remmenga MATH 408}
+\rhead{Project \#5}
+%\lhead{Independent Study}
+%\rhead{R Lab}
+
+\begin{enumerate}
+
+\item 
+	\begin{enumerate}
+	\item
+	\begin{equation*}
+	\begin{split}
+	G(x,\bar{x}) &= \begin{cases}
+		\bar{x}(x-\pi), \bar{x} \in [0,x] \\
+		x(\bar{x}-\pi), \bar{x} \in [x,\pi]
+		\end{cases} \\
+	u(x) &= \int_{0}^{\pi} G(x,\bar{x}) (- f(\bar{x}))d\bar{x}
+	\end{split}
+	\end{equation*}
+	\item
+	\begin{equation*}
+	\begin{split}
+	u''(x) &= -sin(x) \\
+	u(x) &= \int_{0}^{\pi} G(x,\bar{x}) sin(\bar{x}) d\bar{x} \\
+	u(x) & = \int_{0}^{x}\bar{x}sin(\bar{x})d\bar{x} (x-\pi) + \int_{x}^{\pi}(\bar{x} -\pi) sin(\bar{x})d\bar{x} x \\
+	u(x) & = [-\bar{x}cos(\bar{x})+sin(\bar{x})]_{0}^{x} (x-\pi) + [sin(\bar{x}) - (\bar{x}-\pi)cos(\bar{x})]_{x}^{\pi} x \\
+	u(x) & = [-xcos(x)+sin(x)][x-\pi] + x[sinx-(x-\pi)cos(x)] \\
+	u(x) & = -x^{2}cos(x)+xsin(x) +\pi x cos(x) -\pi sin(x) + xsin(x) -x^{2}cos(x) + x \pi cos(x) \\
+	u(x) & = -2x^{2} cos(x) + 2xsin(x) + 2 \pi x cos(x) -\pi sin(x) 
+	\end{split}
+	\end{equation*}
+	\item
+	\begin{equation*}
+	\begin{split}
+	u(x) & = c sin(x) \\
+	u(0) & = u(\pi) = 0 \\
+	u''(x) + u(x) & = 0 \\
+	-csin(x)+csin(x) & = 0
+	\end{split}
+	\end{equation*}
+	\item
+As an ode we have (c) as a solution but the greens function is also a valid solution starting with two different linear approaches which satisfy the boundary conditions. We have two y intercepts from integrating twice and getting $c_{1} + c_{2}x = y$ with two different $c_{1}$ and $c_{2}$ values. Since the two $y$ equations are valid solutions, by superposition, the combination of the two are valid so long as they satisfy the boundary conditions. 
+	\end{enumerate}
+\item
+	\begin{enumerate}
+	\item
+	\item
+	\item
+	\end{enumerate}
+\item
+	\begin{enumerate}
+	\item
+	\item
+	\end{enumerate}
+\item
+	\begin{enumerate}
+	\item
+	\item
+	\end{enumerate}
+
+
+\end{enumerate}
+
+
+
+\end{document}
